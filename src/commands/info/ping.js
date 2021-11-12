@@ -11,7 +11,7 @@ module.exports = class PingCommand extends Command {
 
     run = (Interaction => {
         Interaction.reply({
-            content: `🚧 | A latência do bot é de \`${this.client.ws.ping}\` ms`,
+            content: `🏓 PONG | A latência do bot é de \`${this.client.ws.ping}\` ms`,
             ephemeral: false // Se for true a mensagem só irá aparecer para a pessoa que executou o comando
         })
      })

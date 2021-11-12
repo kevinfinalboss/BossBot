@@ -19,12 +19,12 @@ module.exports = class extends Command {
     }
 
     run = async (interaction) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'Você não tem permissão para usar este comando!', ephemeral: true })
+        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'Você não tem permissão para usar este comando!', ephemeral: false })
 
         const channels = interaction.guild.channels.cache
             .filter(c => c.type === 'GUILD_TEXT' && c.permissionsFor(this.client.user.id).has(['SEND_MESSAGES', 'EMBED_LINKS']) && c.permissionsFor(interaction.user.id).has('SEND_MESSAGES'))
 
-        if (!channels.size) return interaction.reply({ content: 'Não consigo enviar a mensagem em nenhum dos canais do servidor.', ephemeral: true })
+        if (!channels.size) return interaction.reply({ content: 'Não consigo enviar a mensagem em nenhum dos canais do servidor.', ephemeral: false })
 
         const actionRow = new MessageActionRow()
             .addComponents([

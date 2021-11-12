@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+const {  Message, MessageEmbed } = require('discord.js')
 const { type } = require('os')
 const Client = require('./src/structures/Client')
 
@@ -28,7 +29,7 @@ client.on('ready', () =>{
     client.user.setActivity(`${activities[i++ % activities.length]}`, {
         type: "WATCHING"
 
-    }), 10000);
+    }), 6000);
 })
 
 client.login(process.env.BOT_TOKEN);
