@@ -19,16 +19,4 @@ client.once('ready', function(){
     console.log("Bot logado")
 })
 
-client.on('ready', () =>{
-    let activities = [
-        `GAMA XP`
-    ],
-    i = 0;
-    setInterval( () =>
-    client.user.setActivity(`${activities[i++ % activities.length]}`, {
-        type: "WATCHING"
-
-    }), 10000);
-})
-
 client.login(process.env.BOT_TOKEN);
